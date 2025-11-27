@@ -43,7 +43,7 @@ module.exports = {
     // ✨ Final Loop (No logic change)
     // -------------------------------
     for (const member of removedMembers) {
-      const mention = `@${member.phoneNumber.split('@')[0]}`;
+      const mention = `@${member.split('@')[0]}`;
 
       await api.sendMessage(event.id, {
         text:
