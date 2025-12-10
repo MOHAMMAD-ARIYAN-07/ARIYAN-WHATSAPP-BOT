@@ -18,7 +18,7 @@ module.exports = {
             + 'VERSION:3.0\n' 
             + 'FN:Mohammad Nayan\n'
             + 'ORG:Nayan;\n'
-            + 'TEL;type=CELL;type=VOICE;waid=8801615298449:01615298449\n'
+            + 'TEL;type=CELL;type=VOICE;waid=8801832852311:01832852311\n'
             + 'END:VCARD';
 
     const sentMsg = await api.sendMessage(
