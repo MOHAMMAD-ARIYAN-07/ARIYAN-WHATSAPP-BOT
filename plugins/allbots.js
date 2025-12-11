@@ -15,12 +15,12 @@ module.exports = {
   start: async ({ api, event }) => {
     const { threadId, message } = event;
 
-    const myNumber = "8801615298449";
-    const msg = `🌟 *NAYAN BOT COLLECTION* 🌟
+    const myNumber = "8801832852311";
+    const msg = `🌟 *ARIYAN BOT COLLECTION* 🌟
 
 📱 *WhatsApp Bot*
-Link: https://github.com/MOHAMMAD-NAYAN-07/NAYAN-WHATSAPP-BOT
-Tutorial: https://youtu.be/hrO_v3z-Lq8
+Link: https://github.com/MOHAMMAD-ARIYAN-07/ARIYAN-WHATSAPP-BOT
+Tutorial: https://youtu.be/CungMJ6b1Ss?si=H5p9HdyYfkoR7zmA
 
 💬 *Messenger Bot*
 Link: https://github.com/MOHAMMAD-NAYAN-07/Nayan-Bot
