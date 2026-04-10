@@ -111,8 +111,8 @@ module.exports = {
     }
 
     responseText += `
-╰──────────────────────╯`;
-
+╰──────────────────────╯
+✨ Power ARIYAN-BHAI`;
     try {
       const response = await axios.get(global.config.helpPic, { responseType: 'stream' });
       await api.sendMessage(threadId, {
