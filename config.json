@@ -1,8 +1,8 @@
 {
   "packname": "My Sticker Pack",
   "author": "My Bot",
-  "botName": "Nayan Bot",
-  "botOwner": "Mohammad Nayan",
+  "botName": "💌🥳 𝙺𝙰𝙻𝙰 𝙱𝙸𝙻𝙰𝙸🥳",
+  "botOwner": "🥳𝙰𝚁𝙸𝚈𝙰𝙽🥳",
   "autoUpdate": true,
   "runMsg": false,
   "ownerNumber": "8801832852311",
@@ -14,8 +14,8 @@
     "8801832852311",
     "252428784029710"
   ],
-  "helpPic": "https://i.postimg.cc/pV7xByGv/IMG-20250106-WA0007.png",
-  "welPic": "https://i.postimg.cc/3JQF0qWf/received-383729254132460.jpg",
+  "helpPic": "https://i.postimg.cc/Gh9TDzCr/1774291668544.jpg",
+  "welPic": "https://i.ibb.co/LDC2xQRt/1774291668544.jpg",
   "PORT": "3000",
   "delay": 100,
   "msg": {
