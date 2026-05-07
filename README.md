@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Nayan%20WhatsApp%20Bot&fontSize=80&fontColor=00FFFF&animation=twinkling&fontAlignY=36&desc=Multi%20Device%20WhatsApp%20Bot&descAlignY=60&descSize=24" width="100%"/>
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&duration=3000&pause=800&color=00FF88&center=true&vCenter=true&width=750&lines=Welcome+to+Nayan+WhatsApp+Bot+%F0%9F%A4%96;Multi+Device+WhatsApp+Bot+%F0%9F%93%B1;Powered+by+Mohammad+Nayan+%E2%9C%A8;Fast+%7C+Smart+%7C+Feature-Rich+%F0%9F%9A%80" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&duration=3000&pause=800&color=00FF88&center=true&vCenter=true&width=750&lines=Welcome+to+Ariyan+WhatsApp+Bot+%F0%9F%A4%96;Multi+Device+WhatsApp+Bot+%F0%9F%93%B1;Powered+by+Mohammad+Nayan+%E2%9C%A8;Fast+%7C+Smart+%7C+Feature-Rich+%F0%9F%9A%80" alt="Typing SVG" />
 </a>
 
 <br><br>
