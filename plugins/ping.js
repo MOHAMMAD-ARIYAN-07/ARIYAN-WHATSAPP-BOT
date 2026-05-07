@@ -1,3 +1,39 @@
+const fs = require("fs");
+const path = require("path");
+const os = require("os");
+
+
+function getFolderSize(folderPath) {
+  let totalSize = 0;
+
+  function calculate(dir) {
+    const files = fs.readdirSync(dir);
+
+    for (const file of files) {
+      const filePath = path.join(dir, file);
+      const stats = fs.statSync(filePath);
+
+      if (stats.isDirectory()) {
+        calculate(filePath);
+      } else {
+        totalSize += stats.size;
+      }
+    }
+  }
+
+  calculate(folderPath);
+  return totalSize;
+}
+
+
+function getCacheSize() {
+  const cachePath = path.join(process.cwd(), "plugins", "cache");
+
+  if (!fs.existsSync(cachePath)) return 0;
+
+  return getFolderSize(cachePath);
+}
+
 module.exports = {
   config: {
     name: 'ping',
@@ -6,27 +42,50 @@ module.exports = {
     prefix: 'both',
     categories: 'system',
     description: 'Check bot response time',
-    usages: [
-      'ping',
-      'p'
-    ],
-    credit: 'Modified by Emon-Bhai'
+    credit: "Mohammad Nayan"
   },
 
   start: async ({ event, api }) => {
-    const { threadId } = event;
+    const { threadId, message } = event;
+
+    const start = Date.now();
 
     
-    const responses = [
-      "🏓 Pong! I'm alive ⚡",
-      "⚡ Bot online & responsive!",
-      "🚀 Speed check: OK!",
-      "✅ System running smoothly!"
-    ];
+
+    const ping = Date.now() - start;
 
     
-    const reply = responses[Math.floor(Math.random() * responses.length)];
+    const totalMem = (os.totalmem() / 1024 / 1024 / 1024).toFixed(2);
+    const freeMem = (os.freemem() / 1024 / 1024 / 1024).toFixed(2);
 
-    await api.sendMessage(threadId, { text: reply });
-  },
+    
+    const rootSize = getFolderSize(process.cwd());
+    const cacheSize = getCacheSize();
+
+    const rootMB = (rootSize / 1024 / 1024).toFixed(2);
+    const cacheMB = (cacheSize / 1024 / 1024).toFixed(2);
+
+    
+    let status = "🚀 SUPER FAST";
+    if (ping > 500) status = "🐢 SLOW";
+    else if (ping > 200) status = "⚠️ NORMAL";
+
+    const box = `
+╔══════════════════════╗
+║     🏓 SYSTEM PING    ║
+╠══════════════════════╣
+║ ⚡ Ping: ${ping}ms
+║ 📊 Status: ${status}
+║ 🧠 RAM: ${freeMem}/${totalMem} GB
+║ 📦 Project: ${rootMB} MB
+║ 🗂️ Cache: ${cacheMB} MB
+╚══════════════════════╝
+`;
+
+    await api.sendMessage(
+      threadId,
+      { text: box },
+      { quoted: message }
+    );
+  }
 };
