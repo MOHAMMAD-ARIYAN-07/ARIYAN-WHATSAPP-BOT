@@ -1,3 +1,4 @@
+const isAdmin = global.isAdmin
 module.exports = {
   config: {
     name: "lock",
@@ -7,9 +8,9 @@ module.exports = {
     categorie: "Moderation",
     credit: "Developed by Mohammad Nayan",
     usages: [
-      ".lock sticker - Enable sticker lock",
-      ".lock all - Enable all media lock",
-      ".lock off - Disable lock"
+      "/lock sticker - Enable sticker lock",
+      "/lock all - Enable all media lock",
+      "/lock off - Disable lock"
     ]
   },
 
@@ -51,8 +52,14 @@ module.exports = {
   },
 
   event: async ({ event, api }) => {
-  const { threadId, senderId, message} = event;
+  const { threadId, senderId, message, isGroup} = event;
+    if (!isGroup) return;
   const msg = event.message.message;
+
+    const { isSenderAdmin, isBotAdmin } = await isAdmin(api, threadId, senderId);
+
+    if (isSenderAdmin) return;
+    
 
    
 
