@@ -22,7 +22,7 @@ module.exports = {
 
       const quotedMessage = message.message.extendedTextMessage.contextInfo.quotedMessage;
 
-      console.log(quotedMessage)
+   //   console.log(quotedMessage)
 
 
       let mediaType;
@@ -38,9 +38,11 @@ module.exports = {
         return api.sendMessage(event.threadId, { text: '⚠️ Unsupported media type.' }, { quoted: message });
       }
 
+     // console.log(mediaType)
+
 
       const buffer = await downloadMediaMessage(
-        { message: message.message.extendedTextMessage.contextInfo },
+        { message: quotedMessage },
         'buffer',
         {},
         {
@@ -49,7 +51,7 @@ module.exports = {
         }
       );
 
-
+//console.log(buffer)
       await api.sendMessage(event.threadId, {
         [mediaType]: buffer
       }, { quoted: message });
